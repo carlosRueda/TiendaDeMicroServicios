@@ -19,6 +19,7 @@ namespace TiendaDeMicroServiciosAPI.Libro.Test
     {
         private List<LibreriaMaterial> ObtenerDataPrueba()
         {
+            //este metodo es para llenar con data de genfu
             A.Configure<LibreriaMaterial>()
                 .Fill(x => x.Titulo).AsArticleTitle()
                 .Fill(x => x.LibreriaMaterialId, () => { return Guid.NewGuid(); });
