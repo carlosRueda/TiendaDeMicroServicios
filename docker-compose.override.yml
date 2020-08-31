@@ -22,3 +22,12 @@ services:
     ports:
       - "3748:80"
 
+
+  tiendademicroservicios.api.gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - tiendademicroservicios.api.libro
+    ports:
+      - "52854:80"
+
