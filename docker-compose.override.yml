@@ -13,3 +13,12 @@ services:
     ports:
       - "9957:80"
 
+
+  tiendademicroservicios.api.carritodecompras:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Services__Libros=http://tiendademicroservicios.api.libro
+      - Services__Autores=http://tiendademicroservicios.api.autor
+    ports:
+      - "3748:80"
+
