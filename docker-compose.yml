@@ -6,6 +6,12 @@ services:
     build:
       context: .
       dockerfile: TiendaDeMicroservicios.API.Autor/Dockerfile
+  tiendademicroservicios.api.libro:
+    image: ${DOCKER_REGISTRY-}tiendademicroserviciosapilibro
+    build:
+      context: .
+      dockerfile: TiendaDeMicroservicios.API.Libro/Dockerfile
+
 networks:
   default:
     external:
