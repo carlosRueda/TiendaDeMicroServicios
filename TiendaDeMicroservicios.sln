@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaDeMicroservicios.API.Autor", "TiendaDeMicroservicios.API.Autor\TiendaDeMicroservicios.API.Autor.csproj", "{0A511286-28C0-40C8-9876-E007EBC6DFA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaDeMicroservicios.API.Autor", "TiendaDeMicroservicios.API.Autor\TiendaDeMicroservicios.API.Autor.csproj", "{0A511286-28C0-40C8-9876-E007EBC6DFA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaDeMicroservicios.API.Libro", "TiendaDeMicroservicios.API.Libro\TiendaDeMicroservicios.API.Libro.csproj", "{E41D9689-C8D0-44FF-B17F-508D59A46B65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaDeMicroservicios.API.Libro", "TiendaDeMicroservicios.API.Libro\TiendaDeMicroservicios.API.Libro.csproj", "{E41D9689-C8D0-44FF-B17F-508D59A46B65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaDeMicroservicios.API.CarritoDeCompras", "TiendaDeMicroservicios.API.CarritoDeCompras\TiendaDeMicroservicios.API.CarritoDeCompras.csproj", "{105808B3-ACF7-47B7-AE33-7CBC39253A1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaDeMicroservicios.API.CarritoDeCompras", "TiendaDeMicroservicios.API.CarritoDeCompras\TiendaDeMicroservicios.API.CarritoDeCompras.csproj", "{105808B3-ACF7-47B7-AE33-7CBC39253A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaDeMicroServiciosAPI.Libro.Test", "TiendaDeMicroServiciosAPI.Libro.Test\TiendaDeMicroServiciosAPI.Libro.Test.csproj", "{2F37F2B4-3668-4BE7-B1C0-EB716F7CCE80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaDeMicroServiciosAPI.Libro.Test", "TiendaDeMicroServiciosAPI.Libro.Test\TiendaDeMicroServiciosAPI.Libro.Test.csproj", "{2F37F2B4-3668-4BE7-B1C0-EB716F7CCE80}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C9A38AE9-DE66-4A60-B29F-AD90BDA71C71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2F37F2B4-3668-4BE7-B1C0-EB716F7CCE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F37F2B4-3668-4BE7-B1C0-EB716F7CCE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F37F2B4-3668-4BE7-B1C0-EB716F7CCE80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A38AE9-DE66-4A60-B29F-AD90BDA71C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A38AE9-DE66-4A60-B29F-AD90BDA71C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A38AE9-DE66-4A60-B29F-AD90BDA71C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A38AE9-DE66-4A60-B29F-AD90BDA71C71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tiendademicroservicios.api.autor:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "2218:80"

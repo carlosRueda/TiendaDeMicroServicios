@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  tiendademicroservicios.api.autor:
+    image: ${DOCKER_REGISTRY-}tiendademicroserviciosapiautor
+    build:
+      context: .
+      dockerfile: TiendaDeMicroservicios.API.Autor/Dockerfile
+networks:
+  default:
+    external:
+      name: microserviceNet
