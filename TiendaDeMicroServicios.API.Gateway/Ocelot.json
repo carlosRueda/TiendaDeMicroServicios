@@ -10,7 +10,8 @@
         }
       ],
       "UpstreamPathTemplate": "/Libro",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "Key": "LibroTotal"
     },
     {
       "DownstreamPathTemplate": "/api/libroMaterial/{id}",
@@ -22,7 +23,10 @@
         }
       ],
       "UpstreamPathTemplate": "/Libro/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DelegatingHandlers": [
+        "LibroHandler"
+      ]
     },
     {
       "DownstreamPathTemplate": "/api/autor",
@@ -34,7 +38,8 @@
         }
       ],
       "UpstreamPathTemplate": "/Autor",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "Key": "AutorTotal"
     },
     {
       "DownstreamPathTemplate": "/api/autor/{id}",
@@ -72,5 +77,14 @@
       "UpstreamPathTemplate": "/CarritoCompra/{id}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     }
-  ]
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "AutorTotal",
+        "LibroTotal"
+      ],
+      "UpstreamPathTemplate": "/LibroAutor"
+    }
+  ] 
 }
