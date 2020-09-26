@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TiendaDeMicroservicios.API.Libro.Aplicacion;
 using TiendaDeMicroservicios.API.Libro.Persistencia;
+using TiendaDeMicroServicios.RabbitMQ.Bus.BusRabbit;
+using TiendaDeMicroServicios.RabbitMQ.Bus.Implement;
 
 namespace TiendaDeMicroservicios.API.Libro
 {
@@ -30,6 +32,8 @@ namespace TiendaDeMicroservicios.API.Libro
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IRabbitEventBus, RabbitEventBus>();
+
             services.AddControllers()
                 .AddFluentValidation(options=> options.RegisterValidatorsFromAssemblyContaining<Nuevo>());
 

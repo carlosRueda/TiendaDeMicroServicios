@@ -14,7 +14,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TiendaDeMicroservicios.API.Autor.Aplicacion;
+using TiendaDeMicroservicios.API.Autor.ManejadorRabbit;
 using TiendaDeMicroservicios.API.Autor.Persistencia;
+using TiendaDeMicroServicios.RabbitMQ.Bus.BusRabbit;
+using TiendaDeMicroServicios.RabbitMQ.Bus.EventoQueue;
+using TiendaDeMicroServicios.RabbitMQ.Bus.Implement;
 
 namespace TiendaDeMicroservicios.API.Autor
 {
@@ -30,6 +34,9 @@ namespace TiendaDeMicroservicios.API.Autor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IRabbitEventBus, RabbitEventBus>();
+            services.AddTransient<IEventoManejador<EmailEventoQueue>, ManejadorEventoEmail>();
+
             services.AddControllers()
                 .AddFluentValidation(cfg => {
                     cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>();
@@ -60,6 +67,9 @@ namespace TiendaDeMicroservicios.API.Autor
             {
                 endpoints.MapControllers();
             });
+
+            var eventBus = app.ApplicationServices.GetRequiredService<IRabbitEventBus>();
+            eventBus.Suscribe<EmailEventoQueue, ManejadorEventoEmail>();
         }
     }
 }
