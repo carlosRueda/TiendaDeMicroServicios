@@ -15,7 +15,9 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaDeMicroServicios.API.Gateway", "TiendaDeMicroServicios.API.Gateway\TiendaDeMicroServicios.API.Gateway.csproj", "{6CFBAD4C-A5F8-409C-BBBA-14832A31BE07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaDeMicroServicios.RabbitMQ.Bus", "TiendaDeMicroServicios.RabbitMQ.Bus\TiendaDeMicroServicios.RabbitMQ.Bus.csproj", "{AF4D3983-890C-4E18-9C3A-721F70BD42D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaDeMicroServicios.RabbitMQ.Bus", "TiendaDeMicroServicios.RabbitMQ.Bus\TiendaDeMicroServicios.RabbitMQ.Bus.csproj", "{AF4D3983-890C-4E18-9C3A-721F70BD42D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaDeMicroservicios.Mensajeria.Email", "TiendaDeMicroservicios.Mensajeria.Email\TiendaDeMicroservicios.Mensajeria.Email.csproj", "{DD8CDCC1-A779-4620-9F20-B776B6E2FAB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{AF4D3983-890C-4E18-9C3A-721F70BD42D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF4D3983-890C-4E18-9C3A-721F70BD42D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF4D3983-890C-4E18-9C3A-721F70BD42D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD8CDCC1-A779-4620-9F20-B776B6E2FAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD8CDCC1-A779-4620-9F20-B776B6E2FAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD8CDCC1-A779-4620-9F20-B776B6E2FAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD8CDCC1-A779-4620-9F20-B776B6E2FAB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TiendaDeMicroservicios.Mensajeria.Email\TiendaDeMicroservicios.Mensajeria.Email.csproj" />
     <ProjectReference Include="..\TiendaDeMicroServicios.RabbitMQ.Bus\TiendaDeMicroServicios.RabbitMQ.Bus.csproj" />
   </ItemGroup>
 

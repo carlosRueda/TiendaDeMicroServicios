@@ -13,9 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SendGrid.Helpers.Errors.Model;
 using TiendaDeMicroservicios.API.Autor.Aplicacion;
 using TiendaDeMicroservicios.API.Autor.ManejadorRabbit;
 using TiendaDeMicroservicios.API.Autor.Persistencia;
+using TiendaDeMicroservicios.Mensajeria.Email.SendGridLibreria.Implement;
+using TiendaDeMicroservicios.Mensajeria.Email.SendGridLibreria.Interface;
 using TiendaDeMicroServicios.RabbitMQ.Bus.BusRabbit;
 using TiendaDeMicroServicios.RabbitMQ.Bus.EventoQueue;
 using TiendaDeMicroServicios.RabbitMQ.Bus.Implement;
@@ -34,14 +37,24 @@ namespace TiendaDeMicroservicios.API.Autor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IRabbitEventBus, RabbitEventBus>();
+            services.AddSingleton<IRabbitEventBus, RabbitEventBus>(sp =>
+            {
+                var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+                return new RabbitEventBus(sp.GetService<IMediator>(), scopeFactory);
+            });
+
+            services.AddSingleton<ISendGridEnviar, SendGridEnviar>();
+
+            services.AddTransient<ManejadorEventoEmail>();
+            //services.AddTransient<IRabbitEventBus, RabbitEventBus>();//se cambió por las líneas de arriba
             services.AddTransient<IEventoManejador<EmailEventoQueue>, ManejadorEventoEmail>();
 
             services.AddControllers()
-                .AddFluentValidation(cfg => {
+                .AddFluentValidation(cfg =>
+                {
                     cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>();
                 });
-            services.AddDbContext<ContextoAutor>(options=>
+            services.AddDbContext<ContextoAutor>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("ConexionDatabase"));
             });
